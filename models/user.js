@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize/dist");
+const Sequelize = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => (
   sequelize.define('user', {
@@ -13,6 +13,17 @@ module.exports = (sequelize, DataTypes) => (
     'nick': {
       type: DataTypes.STRING(10),
       allowNull: false,
-    }
+    },
+
+  }, {
+    sequelize,
+    timestamps: true,
+    underscored: false,
+    modelName: 'User',
+    tableName: 'users',
+    paranoid: true,
+    charset: 'utf8',
+    collate: 'utf8_general_ci',
   })
+
 )
