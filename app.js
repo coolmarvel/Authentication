@@ -34,7 +34,7 @@ app.use(session({
     secure: false,
   }
 }))
-app.use(passport.initialze())
+app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/', indexRouter)

@@ -14,16 +14,14 @@ module.exports = (sequelize, DataTypes) => (
       type: DataTypes.STRING(10),
       allowNull: false,
     },
-
-  }, {
-    sequelize,
-    timestamps: true,
-    underscored: false,
-    modelName: 'User',
-    tableName: 'users',
-    paranoid: true,
-    charset: 'utf8',
-    collate: 'utf8_general_ci',
-  })
-
+  },
+    {
+      sequelize,
+      timestamps: false,
+      modelName: "Users",
+      tableName: "users",
+      charset: "utf8mb4",
+      collate: "utf8mb4_general_ci"
+    }
+  )
 )
